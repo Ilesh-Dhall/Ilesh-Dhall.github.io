@@ -8,6 +8,7 @@ import {
     FunnelIcon,
     CalendarIcon,
     BookOpenIcon,
+    CheckIcon,
     ClipboardDocumentIcon,
     DocumentTextIcon
 } from '@heroicons/react/24/outline';
@@ -34,6 +35,38 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
+    const [copiedBibtexId, setCopiedBibtexId] = useState<string | null>(null);
+
+    const copyBibtex = async (id: string, bibtex: string) => {
+        const fallbackCopy = () => {
+            const textarea = document.createElement('textarea');
+            textarea.value = bibtex;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            const copied = document.execCommand('copy');
+            document.body.removeChild(textarea);
+            if (!copied) throw new Error('Copy command was rejected');
+        };
+
+        try {
+            if (navigator.clipboard?.writeText) {
+                try {
+                    await navigator.clipboard.writeText(bibtex);
+                } catch {
+                    fallbackCopy();
+                }
+            } else {
+                fallbackCopy();
+            }
+
+            setCopiedBibtexId(id);
+            window.setTimeout(() => setCopiedBibtexId((current) => current === id ? null : current), 1500);
+        } catch (error) {
+            console.error('Unable to copy BibTeX:', error);
+        }
+    };
 
     // Extract unique years and types for filters
     const years = useMemo(() => {
@@ -315,14 +348,12 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                         {pub.bibtex}
                                                     </pre>
                                                     <button
-                                                        onClick={() => {
-                                                            navigator.clipboard.writeText(pub.bibtex || '');
-                                                            // Optional: Show copied feedback
-                                                        }}
+                                                        onClick={() => copyBibtex(pub.id, pub.bibtex || '')}
                                                         className="absolute top-2 right-2 p-1.5 rounded-md bg-white dark:bg-neutral-700 text-neutral-500 hover:text-accent shadow-sm border border-neutral-200 dark:border-neutral-600 transition-colors"
-                                                        title={messages.common.copyToClipboard}
+                                                        title={copiedBibtexId === pub.id ? 'Copied' : messages.common.copyToClipboard}
+                                                        aria-label={copiedBibtexId === pub.id ? 'BibTeX copied' : messages.common.copyToClipboard}
                                                     >
-                                                        <ClipboardDocumentIcon className="h-4 w-4" />
+                                                        {copiedBibtexId === pub.id ? <CheckIcon className="h-4 w-4 text-accent" /> : <ClipboardDocumentIcon className="h-4 w-4" />}
                                                     </button>
                                                 </div>
                                             </motion.div>

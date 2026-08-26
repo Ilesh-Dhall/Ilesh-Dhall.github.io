@@ -1,0 +1,87 @@
+type = "card"
+title = "Projects"
+description = "Selected projects and experiments."
+
+[[items]]
+author = "Ilesh Dhall"
+slug = "deep-neural-compression-for-neural-style-transfer"
+title = "Deep Neural Compression for Neural Style Transfer"
+subtitle = "Model Compression for Efficient Artistic Style Transfer"
+date = "2024"
+image = "/projects/deep-neural-compression/cover.png"
+content = "Compresses VGG-19 for neural style transfer using sensitivity-guided fine-grained pruning, achieving 6.64× model compression while preserving stylization quality."
+details_source = "projects/deep-neural-compression-for-neural-style-transfer.md"
+show_contents = true
+show_detail_page = true
+tags = ["Python", "PyTorch", "Computer Vision", "Deep Learning", "Model Compression"]
+
+[[items.links]]
+label = "GitHub"
+url = "https://github.com/Ilesh-Dhall/Deep-Neural-Compression-For-Neural-Style-Transfer"
+
+[[items]]
+author = "Ilesh Dhall"
+slug = "agriverse-smart-agriculture-platform"
+title = "AgriVerse: Smart Agriculture Platform"
+subtitle = "Multi-Agent Agricultural Intelligence with Vision + Retrieval"
+date = "2026"
+image = "/projects/agriverse/cover.png"
+content = "An AI-powered multi-agent platform delivering farming guidance through weather, market, policy, and disease-analysis workflows with FastAPI, React, and n8n orchestration."
+details_source = "projects/agriverse-smart-agriculture-platform.md"
+show_contents = true
+show_detail_page = true
+tags = ["AI Agents", "FastAPI", "React", "n8n", "ChromaDB", "EfficientNet"]
+
+[[items.links]]
+label = "GitHub"
+url = "https://github.com/Ilesh-Dhall/AgriVerse-Smart-Agriculture-Platform"
+
+[[items]]
+author = "Ilesh Dhall"
+slug = "metabolomics-data-analysis-for-biomarker-discovery"
+title = "Metabolomics Data Analysis for Biomarker Discovery"
+subtitle = "R and Shiny Workflow for Cardiotoxicity Biomarker Insights"
+date = "2024"
+image = "/projects/metabolomics/cover.png"
+content = "Analyzes targeted metabolomics data to identify potential cardiotoxicity biomarkers through statistical analysis, ML-assisted feature selection, and interactive visualization."
+details_source = "projects/metabolomics-data-analysis-for-biomarker-discovery.md"
+show_contents = true
+show_detail_page = true
+tags = ["R", "Shiny", "Data Analysis", "Machine Learning", "Biomarker Discovery"]
+
+[[items.links]]
+label = "GitHub"
+url = "https://github.com/Ilesh-Dhall/Metabolomics-Data-Analysis-For-Biomarker-Discovery"
+
+[[items.links]]
+label = "Live Dashboard"
+url = "https://ilesh-dhall.shinyapps.io/Metabolomics-Biomarker-Discovery/"
+
+[[items]]
+author = "Ilesh Dhall"
+slug = "story-forge-fine-tuned-llm-story-generation"
+title = "Story-Forge: Fine-Tuned LLM Story Generation"
+subtitle = "QLoRA Fine-Tuning and Lightweight LLM Deployment"
+date = "2026"
+content = "Fine-tuned Phi-3 Mini (3.8B) using QLoRA with 4-bit NF4 quantization and LoRA adapters, then optimized inference with Q4_K_M GGUF and llama.cpp for lightweight CPU-based deployment."
+show_contents = true
+show_detail_page = false
+tags = ["Python", "PyTorch", "Transformers", "Fine-Tuning", "QLoRA", "llama.cpp"]
+
+[[items.links]]
+label = "Deployment"
+url = "https://huggingface.co/spaces/Ilesh-Dhall/Story-Forge"
+
+[[items]]
+author = "Ilesh Dhall, Prakhar Singh"
+show_author=true
+slug = "rubiks-cube-solver-visualizer"
+title = "Rubik's Cube Solver & Visualizer"
+subtitle = "Interactive 3D Visualization and Algorithmic Cube Solving"
+date = "2025"
+content = "Built an interactive Rubik's Cube solver supporting 2×2 to 10x10 cubes, multiple solving algorithms, 3D visualization with Three.js, benchmarking, and step-by-step solution playback."
+tags = ["TypeScript", "React", "Three.js", "Algorithms", "Web Workers"]
+
+[[items.links]]
+label = "GitHub"
+url = "https://github.com/PrakharSinghOnGit/Rubix-Cube-Solver-Visualizer"

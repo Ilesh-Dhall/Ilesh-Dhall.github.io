@@ -1,0 +1,69 @@
+[site]
+title = "Ilesh Dhall"
+description = "Undergrad student at Graphic Era (Deemed to be University)."
+favicon = "/favicon.ico"
+# Update this manually when you publish meaningful site changes.
+last_updated = "August 24, 2026"
+
+[author]
+name = "Ilesh Dhall"
+title = "B.Tech CSE (AI & ML)"
+institution = "Graphic Era (Deemed to be University)"
+avatar = "/bio.jpeg"
+
+[social]
+# Contact information (leave blank or delete to hide)
+
+email = "ilesh.dhall@outlook.com"
+location = "Dehradun, India"
+location_url = "https://maps.app.goo.gl/SgBVQSM8UkB48BuJ7"
+location_details = [
+  "Dehradun, Uttarakhand, India"
+]
+google_scholar = "https://scholar.google.com/citations?user=vBDs6_sAAAAJ"
+linkedin = "https://www.linkedin.com/in/ilesh-dhall/"
+orcid = "https://orcid.org/0009-0006-0583-3329"
+github = "https://github.com/Ilesh-Dhall"
+
+[features]
+# Show a like button on the about page
+enable_likes = false
+
+# Display all subpages on a single page
+enable_one_page_mode = false
+
+[[navigation]]
+title = "About"
+type = "page"
+target = "about"
+href = "/"
+
+[[navigation]]
+title = "Projects"
+type = "page"
+target = "projects"
+href = "/projects"
+
+[[navigation]]
+title = "Publications"
+type = "page"
+target = "publications"
+href = "/publications"
+
+[[navigation]]
+title = "Awards"
+type = "page"
+target = "awards"
+href = "/awards"
+
+[[navigation]]
+title = "Resume"
+type = "link"
+target = "resume-pdf"
+href = "/Ilesh_Dhall_Resume.pdf"
+
+[[navigation]]
+title = "CV"
+type = "link"
+target = "cv-pdf"
+href = "/Ilesh_Dhall_CV.pdf"

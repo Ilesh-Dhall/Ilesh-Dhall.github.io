@@ -1,0 +1,25 @@
+type = "about"
+title = "About"
+
+[profile]
+research_interests = [
+  "Large Language Models",
+  "Efficient AI",
+  "Model Compression",
+  "Machine Learning Systems"
+]
+
+[[sections]]
+id = "about"
+type = "markdown"
+source = "bio.md"
+title = "About"
+
+[[sections]]
+id = "highlights"
+type = "highlights"
+title = "Highlights"
+source = "highlights.toml"
+
+
+

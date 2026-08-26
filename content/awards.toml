@@ -1,0 +1,78 @@
+type = "awards"
+title = "Achievements & Recognition"
+description = "Milestones, honors, and recognitions for my work and contributions."
+
+[[items]]
+title = "Amazon ML Summer School"
+symbol = "academic-cap"
+date = "July - August 2026"
+link = "https://lnkd.in/p/gTNuPUXP"
+content = "Selected among top 3000 from 130,000+ applicants for 2026's cohort."
+
+[[items.organizations]]
+name = "Amazon"
+icon = "/logos/amazon.png"
+link = "https://www.amazon.com"
+
+[[items]]
+title = "Achiever's Meet 2026 - Outstanding Achievement"
+symbol = "trophy"
+date = "April 2026"
+link = "https://lnkd.in/p/gXrbxgtR"
+content = "Recognized for outstanding academic and extracurricular achievements at the university’s annual Achievers’ Meet."
+
+[[items.organizations]]
+name = "Graphic Era (Deemed to be University)"
+icon = "/logos/geu.png"
+link = "https://www.geu.ac.in"
+
+[[items]]
+title = "2nd Place, alrIEEEna ML Hackathon"
+symbol = "trophy"
+date = "March 2026"
+link = "https://lnkd.in/p/g9kkMu42"
+content = "Secured 2nd place in a state-level ML hackathon featuring a large-scale image classification task with 60,000+ images across 300+ classes."
+
+[[items.organizations]]
+name = "Graphic Era Hill University, Dehradun"
+icon = "/logos/gehu.png"
+link = "https://gehu.ac.in/dehradun/"
+
+[[items.organizations]]
+name = "IEEE Student Branch, GEHU"
+icon = "/logos/ieee-gehu-sb.jfif"
+link = "https://www.linkedin.com/company/ieeesb-gehu/"
+
+[[items]]
+title = "6th Place, AWS JAM 2026"
+symbol = "trophy"
+date = "February 2026"
+link = "https://lnkd.in/p/g37Y5Wha"
+content = "Secured 6th place among 500+ participants in AWS JAM 2026, a competitive cloud and technology challenge organized by AWS."
+
+[[items.organizations]]
+name = "Graphic Era (Deemed to be University)"
+icon = "/logos/geu.png"
+link = "https://www.geu.ac.in"
+
+[[items.organizations]]
+name = "Amazon Web Services"
+icon = "/logos/aws.svg"
+link = "https://aws.amazon.com/"
+
+[[items]]
+title = "4th Place, AWS JAM 2025"
+symbol = "trophy"
+date = "November 2025"
+link = "https://lnkd.in/p/g2DyUje8"
+content = "Secured 4th place among 500+ participants in AWS JAM 2025, a competitive cloud and technology challenge organized by AWS."
+
+[[items.organizations]]
+name = "Graphic Era (Deemed to be University)"
+icon = "/logos/geu.png"
+link = "https://www.geu.ac.in"
+
+[[items.organizations]]
+name = "Amazon Web Services"
+icon = "/logos/aws.svg"
+link = "https://aws.amazon.com/"

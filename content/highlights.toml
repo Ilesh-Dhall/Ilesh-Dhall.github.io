@@ -1,0 +1,20 @@
+[[highlights]]
+organization = "Graphic Era University"
+role = "Research Intern"
+year = "June - July 2026"
+icon = "/logos/geu.png"
+link = "https://www.geu.ac.in"
+
+[[highlights]]
+organization = "Amazon ML Summer School"
+role = "Selected Participant"
+year = "July - August 2026"
+icon = "/logos/amazon.png"
+link = "https://www.amazon.com"
+
+[[highlights]]
+organization = "IEEE"
+role = "Paper Published (SkyRis) at ICCSC"
+year = "April 2026"
+icon = "/logos/ieee.svg"
+link = "https://doi.org/10.1109/ICCSC67078.2026.11468832"

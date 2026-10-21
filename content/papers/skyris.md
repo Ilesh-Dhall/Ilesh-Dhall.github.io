@@ -4,7 +4,7 @@ Cloudbursts are highly localized and can develop rapidly, making them difficult 
 
 The system combines IoT sensors, machine learning, deep learning, and long-range LoRa communication into a single early-warning framework.
 
-![AI Model Workflow](/papers/skyris/model-workflow.png)
+![AI Model Workflow](/papers/skyris/model-workflow.webp)
 
 ## The Problem
 
@@ -35,10 +35,10 @@ Sensor readings are processed using **15-minute sliding windows**, with predicti
 For the vision component, SkyRis uses two approaches:
 
 - **DenseNet-121 with transfer learning**
-![DenseNet Architecture](/papers/skyris/densenet-arch.png)
+![DenseNet Architecture](/papers/skyris/densenet-arch.webp)
 
 - **A lightweight custom CNN**
-![CNN Architecture](/papers/skyris/cnn-arch.png)
+![CNN Architecture](/papers/skyris/cnn-arch.webp)
 
 The vision models classify sky images according to whether they indicate cloudburst-prone conditions.
 

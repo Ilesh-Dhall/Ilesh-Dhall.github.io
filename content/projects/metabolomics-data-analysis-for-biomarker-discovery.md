@@ -150,7 +150,7 @@ It allows users to explore factors such as:
 - Statistical significance
 - Model predictions
 
-![R Shiny Dashboard](/projects/metabolomics/dashboard.png)
+![R Shiny Dashboard](/projects/metabolomics/dashboard.webp)
 
 The dashboard complements the underlying analysis by providing an accessible interface for investigating the data and results without requiring direct interaction with the analysis code.
 

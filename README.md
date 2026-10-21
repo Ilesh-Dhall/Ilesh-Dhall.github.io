@@ -89,7 +89,7 @@ author = "Ilesh Dhall"
 show_author = true
 subtitle = "A concise project subtitle"
 date = "2026"
-image = "/projects/my-project/cover.png"
+image = "/projects/my-project/cover.webp"
 content = "Short summary shown on the project card."
 details_source = "projects/my-project.md"
 show_detail_page = true
@@ -160,10 +160,16 @@ flowchart LR
 ```
 ````
 
-Store an image in `public/` and reference it with an absolute public path:
+Store an image under `public/projects/` or `public/papers/`, then create a compressed copy:
+
+```bash
+npm run optimize-images
+```
+
+This writes a `.webp` next to each PNG/JPEG, resized to at most 1600px wide and stripped of metadata such as GPS location. Existing up-to-date copies are skipped; pass `-- --force` to regenerate all of them. Reference the `.webp` with an absolute public path:
 
 ```markdown
-![Architecture](/projects/my-project/architecture.png)
+![Architecture](/projects/my-project/architecture.webp)
 ```
 
 ## Deployment

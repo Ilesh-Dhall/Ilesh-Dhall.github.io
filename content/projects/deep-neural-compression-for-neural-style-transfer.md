@@ -33,7 +33,7 @@ The overall process consists of four stages:
 3. Apply fine-grained L1-norm pruning according to the observed layer sensitivities.
 4. Fine-tune the resulting compressed model to recover the quality lost during pruning.
 
-![Architecture](/projects/deep-neural-compression/architecture.png)
+![Architecture](/projects/deep-neural-compression/architecture.webp)
 
 ## Sensitivity Analysis
 
@@ -43,7 +43,7 @@ For each convolutional layer, sparsity levels ranging from **40% to 90%** were e
 
 The resulting loss measurements provide an estimate of how sensitive each layer is to increasing levels of sparsity.
 
-![Sensitivity Analysis](/projects/deep-neural-compression/analysis.jpg)
+![Sensitivity Analysis](/projects/deep-neural-compression/analysis.webp)
 
 The analysis revealed that the convolutional layers do not respond uniformly to pruning. In particular, earlier layers tend to exhibit greater sensitivity to aggressive pruning, while deeper layers can generally tolerate higher sparsity levels.
 
@@ -55,7 +55,7 @@ The behavior of individual layers can be examined through their corresponding se
 
 For example, the Conv.10 curve illustrates the change in optimization behavior as the sparsity of that layer increases.
 
-![Sensitivity Curve](/projects/deep-neural-compression/SensitivityCurve.png)
+![Sensitivity Curve](/projects/deep-neural-compression/SensitivityCurve.webp)
 
 These measurements provide the basis for selecting the final sparsity configuration used during compression.
 
@@ -88,7 +88,7 @@ The objective, however, is not compression in isolation. The effectiveness of th
 
 The qualitative results compare the content image, reference style image, and stylized outputs produced by the compressed network.
 
-![Style Transfer Outputs](/projects/deep-neural-compression/Outputs.png)
+![Style Transfer Outputs](/projects/deep-neural-compression/Outputs.webp)
 
 Despite the substantial reduction in parameters, the pruned model retains the major structural and stylistic characteristics of the generated images.
 

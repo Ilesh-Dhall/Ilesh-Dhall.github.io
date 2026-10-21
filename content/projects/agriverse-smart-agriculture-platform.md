@@ -20,7 +20,7 @@ Rather than relying on one model for every task, AgriVerse separates reasoning, 
 
 AgriVerse uses an orchestrator-based multi-agent architecture. A user query is first interpreted by the orchestrator, which delegates the request to the appropriate domain-specific agents.
 
-![AgriVerse System Architecture](/projects/agriverse/architecture.png)
+![AgriVerse System Architecture](/projects/agriverse/architecture.webp)
 
 The architecture allows individual agents to use the most appropriate source of information or computational capability for a given request.
 

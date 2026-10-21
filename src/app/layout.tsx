@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
+import { Geist, Inter } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import { ThemeProvider } from '@/components/ui/ThemeProvider';
 import { LocaleProvider } from '@/components/ui/LocaleProvider';
 import { getConfig } from '@/lib/config';
+import { getLastCommitDate } from '@/lib/git';
 import { getRuntimeI18nConfig } from '@/lib/i18n/config';
 import type { SiteConfig } from '@/lib/config';
+
+// Self-hosted at build time; exposed as CSS variables used by the font stacks in globals.css.
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const geist = Geist({ subsets: ['latin'], variable: '--font-geist' });
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
@@ -18,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${config.site.title}`,
     },
     description: config.site.description,
-    keywords: [config.author.name, 'PhD', 'Research', config.author.institution],
+    keywords: [config.author.name, config.author.title, 'Research', config.author.institution],
     authors: [{ name: config.author.name }],
     creator: config.author.name,
     publisher: config.author.name,
@@ -31,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: openGraphLocale,
       title: config.site.title,
       description: config.site.description,
-      siteName: `${config.author.name}'s Academic Website`,
+      siteName: config.site.title,
     },
   };
 }
@@ -89,7 +95,8 @@ function buildLocaleBootstrapScript(config: ReturnType<typeof getRuntimeI18nConf
 }
 
 function buildLocalizedConfigMaps(
-  locales: string[]
+  locales: string[],
+  lastCommitDate?: string
 ): {
   navigationByLocale: Record<string, SiteConfig['navigation']>;
   siteTitleByLocale: Record<string, string>;
@@ -103,7 +110,7 @@ function buildLocalizedConfigMaps(
     const localizedConfig = getConfig(locale);
     navigationByLocale[locale] = localizedConfig.navigation;
     siteTitleByLocale[locale] = localizedConfig.site.title;
-    lastUpdatedByLocale[locale] = localizedConfig.site.last_updated;
+    lastUpdatedByLocale[locale] = localizedConfig.site.last_updated || lastCommitDate;
   }
 
   return {
@@ -121,25 +128,17 @@ export default function RootLayout({
   const config = getConfig();
   const runtimeI18n = getRuntimeI18nConfig(config.i18n);
   const targetLocales = runtimeI18n.enabled ? runtimeI18n.locales : [runtimeI18n.defaultLocale];
+  const lastCommitDate = getLastCommitDate();
 
   const {
     navigationByLocale,
     siteTitleByLocale,
     lastUpdatedByLocale,
-  } = buildLocalizedConfigMaps(targetLocales);
+  } = buildLocalizedConfigMaps(targetLocales, lastCommitDate);
 
   return (
-    <html lang={runtimeI18n.defaultLocale} className="scroll-smooth" suppressHydrationWarning>
+    <html lang={runtimeI18n.defaultLocale} className={`${inter.variable} ${geist.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
-        <link rel="dns-prefetch" href="https://jialeliu.com" />
-        <link rel="preconnect" href="https://jialeliu.com" crossOrigin="" />
-        <link
-          rel="preload"
-          as="font"
-          type="font/woff2"
-          href="https://jialeliu.com/fonts/georgiab.woff2"
-          crossOrigin=""
-        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -180,7 +179,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer
-              lastUpdated={config.site.last_updated}
+              lastUpdated={config.site.last_updated || lastCommitDate}
               lastUpdatedByLocale={lastUpdatedByLocale}
               defaultLocale={runtimeI18n.defaultLocale}
             />

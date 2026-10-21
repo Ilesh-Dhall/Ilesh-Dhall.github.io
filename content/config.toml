@@ -2,8 +2,8 @@
 title = "Ilesh Dhall"
 description = "Undergrad student at Graphic Era (Deemed to be University)."
 favicon = "/favicon.ico"
-# Update this manually when you publish meaningful site changes.
-last_updated = "August 24, 2026"
+# The footer date comes from the latest git commit. Uncomment to override it manually.
+# last_updated = "August 24, 2026"
 
 [author]
 name = "Ilesh Dhall"

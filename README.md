@@ -64,19 +64,18 @@ public/
 
 ### Site settings and navigation
 
-Edit `content/config.toml` for your name, social links, navigation, avatar, and footer date.
+Edit `content/config.toml` for your name, social links, navigation, and avatar.
 
 ```toml
 [site]
 title = "Ilesh Dhall"
-last_updated = "August 24, 2026"
 
 [social]
 github = "https://github.com/Ilesh-Dhall"
 linkedin = "https://www.linkedin.com/in/ilesh-dhall/"
 ```
 
-`last_updated` is intentionally manual: update it when you publish a meaningful site change.
+The footer's "Updated" date is taken from the latest git commit at build time. To show a fixed date instead, set `last_updated` under `[site]`.
 
 ### Add a project
 

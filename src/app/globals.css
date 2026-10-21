@@ -11,28 +11,28 @@
   /* Light theme colors */
   --background: #fefffe;
   /* --background: #f6f6f7; */
-  --foreground: #0f172a;
+  --foreground: #171717;
 
-  /* Brand colors - Deep Navy & Gold */
-  --primary: #1e293b;
-  --primary-light: #334155;
-  --primary-dark: #0f172a;
+  /* Brand colors */
+  --primary: #262626;
+  --primary-light: #404040;
+  --primary-dark: #171717;
 
-  --accent: #d4a562;
-  --accent-light: #e4b976;
-  --accent-dark: #b8914d;
+  --accent: #8d1b2a;
+  --accent-light: #a31f30;
+  --accent-dark: #67141f;
 
-  /* Neutral colors */
-  --neutral-50: #f8fafc;
-  --neutral-100: #f1f5f9;
-  --neutral-200: #e2e8f0;
-  --neutral-300: #cbd5e1;
-  --neutral-400: #94a3b8;
-  --neutral-500: #64748b;
-  --neutral-600: #475569;
-  --neutral-700: #334155;
-  --neutral-800: #1e293b;
-  --neutral-900: #0f172a;
+  /* Neutral grayscale - no blue tint, same lightness steps as the previous slate scale */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
 
   /* Semantic colors */
   --success: #10b981;
@@ -164,10 +164,10 @@
   --primary-light: #ffffff;
   --primary-dark: #d4d4d4;
 
-  /* Gold accent */
-  --accent: #d4a562;
-  --accent-light: #e4b976;
-  --accent-dark: #b8914d;
+  /* Crimson accent - lighter than light mode so red text stays readable on the dark background */
+  --accent: #dd6070;
+  --accent-light: #e47e8b;
+  --accent-dark: #b9283b;
 
   /* Neutral grayscale - intentionally no blue */
   --neutral-50: #fafafa;
@@ -294,7 +294,7 @@ body {
 
 .dark .card-bg {
   background-color: #1a1a1a;
-  border-color: #2a2a2a;
+  border-color: #3a3a3a;
 }
 
 .dark .text-gray-400,
@@ -330,7 +330,7 @@ body {
 .dark .border-gray-200,
 .dark .border-slate-200,
 .dark .border-neutral-200 {
-  border-color: #2a2a2a;
+  border-color: #3a3a3a;
 }
 
 .dark .border-gray-300,
@@ -340,12 +340,12 @@ body {
 }
 
 .dark hr {
-  border-color: #2a2a2a;
+  border-color: #3a3a3a;
 }
 
 .dark footer {
   color: #737373;
-  border-color: #2a2a2a;
+  border-color: #3a3a3a;
 }
 
 .dark footer a {

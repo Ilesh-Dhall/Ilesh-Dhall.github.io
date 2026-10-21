@@ -83,6 +83,14 @@ export default function Profile({ author, social, features, researchInterests }:
         }
     };
 
+    // Show "[at]" on the page, but restore "@" when the visitor copies the text.
+    const handleEmailTextCopy = (event: React.ClipboardEvent) => {
+        const selection = window.getSelection()?.toString();
+        if (!selection) return;
+        event.preventDefault();
+        event.clipboardData.setData('text/plain', selection.replace(/\s*\[at\]\s*/g, '@'));
+    };
+
     const socialLinks = [
         ...(social.email ? [{
             name: messages.profile.email,
@@ -296,7 +304,7 @@ export default function Profile({ author, social, features, researchInterests }:
                                                         </div>
                                                     )}
                                                 </div>
-                                                <p className="break-words">{social.email}</p>
+                                                <p className="break-words" onCopy={handleEmailTextCopy}>{social.email?.replace('@', ' [at] ')}</p>
                                                 <div className="mt-2">
                                                     <a
                                                         href={link.href}

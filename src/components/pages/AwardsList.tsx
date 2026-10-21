@@ -50,13 +50,23 @@ export default function AwardsList({ config }: { config: AwardPageConfig }) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: index * 0.08 }}
-            className="grid grid-cols-1 gap-x-7 gap-y-4 py-4 sm:grid-cols-[90px_minmax(0,1fr)_auto] sm:items-start"
+            className="grid grid-cols-1 gap-x-7 gap-y-4 py-4 sm:grid-cols-[90px_minmax(0,1fr)] sm:items-start"
             >
-              <div className="flex h-[85px] w-[85px] items-center justify-center rounded-2xl bg-accent/10 text-accent dark:bg-accent/15">
+              <div className="flex h-[85px] w-[85px] items-center justify-center rounded-2xl bg-primary/[0.06] text-accent">
                 <Symbol className="h-10 w-10 stroke-[1.5]" aria-hidden="true" />
               </div>
               <div className="min-w-0 pt-1">
-                <h2 className="text-xl font-semibold tracking-tight text-primary">{award.title}</h2>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+                  <h2 className="text-xl font-semibold tracking-tight text-primary">{award.title}</h2>
+                  <div className="flex shrink-0 items-center gap-8 sm:pt-0.5">
+                    {award.date && <time className="whitespace-nowrap text-base text-neutral-600 dark:text-neutral-300">{award.date}</time>}
+                    {award.link && (
+                      <a href={award.link} target="_blank" rel="noopener noreferrer" aria-label={`Open link for ${award.title}`} className="text-primary transition-colors hover:text-accent">
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 stroke-[1.75]" aria-hidden="true" />
+                      </a>
+                    )}
+                  </div>
+                </div>
                 {award.organizations && award.organizations.length > 0 && (
                   <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-base text-neutral-600 dark:text-neutral-300">
                     {award.organizations.map((organization, organizationIndex) => {
@@ -87,14 +97,6 @@ export default function AwardsList({ config }: { config: AwardPageConfig }) {
                   </div>
                 )}
                 {award.content && <div className="mt-3 text-base leading-relaxed text-neutral-600 dark:text-neutral-400"><MarkdownRenderer content={award.content} /></div>}
-              </div>
-              <div className="flex items-center gap-8 pt-3 sm:justify-end">
-                {award.date && <time className="whitespace-nowrap text-base text-neutral-600 dark:text-neutral-300">{award.date}</time>}
-                {award.link && (
-                  <a href={award.link} target="_blank" rel="noopener noreferrer" aria-label={`Open link for ${award.title}`} className="text-primary transition-colors hover:text-accent">
-                    <ArrowTopRightOnSquareIcon className="h-6 w-6 stroke-[1.75]" aria-hidden="true" />
-                  </a>
-                )}
               </div>
             </motion.article>
           );
